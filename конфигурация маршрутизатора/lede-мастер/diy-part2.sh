@@ -54,3 +54,4 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 #
 # ------------------------------- Other ends -------------------------------
 
+git clone https://github.com/home-assistant/os-agent.git package/lean/luci-app-os-agent
