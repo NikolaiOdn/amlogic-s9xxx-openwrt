@@ -61,7 +61,7 @@ on:
 
 env:
 #  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_URL: https://github.com/NikolaiOdn/SGW-Openwrt
+  REPO_URL: https://github.com/NikolaiOdn/amlogic-s9xxx-openwrt
   REPO_BRANCH: master
   FEEDS_CONF: router-config/lede-master/feeds.conf.default
   CONFIG_FILE: router-config/lede-master/.config
