@@ -25,7 +25,7 @@ on:
       openwrt_soc:
         description: "Select Amlogic SoC"
         required: false
-        default: "s905x3_s905d_s912"
+        default: "s905x"
         type: choice
         options:
           - all
@@ -48,7 +48,7 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "5.10.125_5.15.50"
+        default: "5.15.50"
         type: choice
         options:
           - 5.4.200_5.10.125
@@ -69,7 +69,7 @@ on:
         default: "960"
 
 env:
-  TZ: America/New_York
+  TZ: Europe/Moscow
   IMAGEBUILDER_SH: router-config/openwrt-imagebuilder/imagebuilder.sh
 
 jobs:
@@ -105,7 +105,8 @@ jobs:
 
       - name: Build OpenWrt firmware
         if: steps.imagebuilder.outputs.status == 'success' && !cancelled()
-        uses: ophub/amlogic-s9xxx-openwrt@main
+        #uses: ophub/amlogic-s9xxx-openwrt@main
+        uses:  NikolaiOdn/amlogic-s9xxx-openwrt@main
         with:
           openwrt_path: openwrt/bin/targets/*/*/*rootfs.tar.gz
           openwrt_soc: ${{ github.event.inputs.openwrt_soc }}
